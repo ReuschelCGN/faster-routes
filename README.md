@@ -25,3 +25,8 @@ If you want to create a new route, just change `faster-routes/geofence.txt`, run
 ### Possible improvements
 - Improve the way of generating possible routepoints (step 1) - currently a lot of power will be wasted on creating points in positions where there already is one close enough where it doesn't make a difference. Maybe add an option to save points from every ~5m² in the area. Would take ages to process but should greatly improve results
 - In the last step, try to recursively go through the route, delete a random routepoint and then try to cover it up with nearby points. Then do the same for those nearby points. Something like that. 
+
+# Additional IMPORTANT Infos:
+This is a Fork from Maltes (CCEV) faster-routes -> [faster-routes](https://github.com/ccev/faster-routes)
+
+Many thanks to him for his original!
