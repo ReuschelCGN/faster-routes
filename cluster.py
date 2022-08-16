@@ -95,7 +95,7 @@ def get_spawns():
         autocommit=True
     )
 
-    with open("fence.txt", "r") as f:
+    with open("geofence.txt", "r") as f:
         area = f.read()
 
     area = area.replace(",", " ").strip("\n")
