@@ -1,8 +1,8 @@
 {
-    "host": "x.x.x.x",
+    "host": "0.0.0.0",
     "user": "user",
     "password": "password",
-    "db_name": "mad",
+    "db_name": "rdmdb",
     "port": 3306,
 
     "max_distance_between_spawns": 75,
