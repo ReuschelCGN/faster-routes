@@ -10,10 +10,10 @@ This is a recommendation of how to use this script. It requires a bit of setup b
 - `git clone https://github.com/ccev/faster-routes.git && cd faster-routes && cp config-example.json config.json`, then fill in the config's db part
 - In the faster-routes directory, create a new file `geofence.txt`. This file should contain the geofence you want your route to be calculated it in.
 - Run `cluster.py`
-- A file called `route.txt` will be created. Copy the content of this file as new optimized route back to your RDM Mon instance.
+- A file called `route.txt` will be created. Copy the content of this file as new optimized route back to your RDM mon instance.
 - Finished.
 
-If you want to create a new route, just change `faster-routes/geofence.txt`, run `cluster.py`, copy content of `route.txt` to RDM Mon instance and review the results.
+If you want to create a new route, just change `faster-routes/geofence.txt`, run `cluster.py`, copy content of `route.txt` to RDMs mon instance and review the results.
 
 ### How it works and what te config does
 
