@@ -105,9 +105,11 @@ def get_spawns():
     area = ",".join(area)
     cursor = connection.cursor()
     if config["lastupdated"] > 0:
-        updatetimer = time.time() - (config["lastupdated"] * 3600 * 24)
+        lastupdated = config["lastupdated"]
     else:
-        updatetimer = time.time() - (730 * 3600 * 24)
+        lastupdated = 730
+    updatetimer = time.time() - (lastupdated * 3600 * 24)
+    print(f"Useing spawnpoints last updated since {lastupdated} days for generating routepoints.")
     query = f"select id, lat, lon from spawnpoint where ST_CONTAINS(ST_GEOMFROMTEXT('POLYGON(({area}))'), point(lat, lon)) and updated >= {updatetimer} order by lon, lat"
     cursor.execute(query)
 
