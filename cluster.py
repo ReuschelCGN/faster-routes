@@ -4,6 +4,7 @@ import math
 import random
 from geopy import distance as calc_distance
 import pickle
+import time
 
 def get_distance(point1, point2):
     # approximate radius of earth in km
@@ -103,7 +104,11 @@ def get_spawns():
     area.append(area[0])
     area = ",".join(area)
     cursor = connection.cursor()
-    query = f"select spawnpoint, latitude, longitude from trs_spawn where ST_CONTAINS(ST_GEOMFROMTEXT('POLYGON(({area}))'), point(latitude, longitude)) and eventid = 1 order by longitude, latitude"
+    if config["lastupdated"] > 0:
+        updatetimer = time.time() - (config["lastupdated"] * 3600 * 24)
+    else:
+        updatetimer = time.time() - (730 * 3600 * 24)
+    query = f"select id, lat, lon from spawnpoint where ST_CONTAINS(ST_GEOMFROMTEXT('POLYGON(({area}))'), point(lat, lon)) and updated > %s AND % {updatetimer} order by lat, lon"
     cursor.execute(query)
 
     r = cursor.fetchall()
