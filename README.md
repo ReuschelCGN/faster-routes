@@ -9,7 +9,7 @@ This is a recommendation of how to use this script. It requires a bit of setup b
 
 - `git clone -b rdm https://github.com/ReuschelCGN/faster-routes.git && cd faster-routes && cp config-example.json config.json`, then fill in the config's db part
 - In the faster-routes directory, edit `geofence.txt`. This file should contain the geofence you want your route to be calculated it in.
-- Run `cluster.py`
+- Run `cluster.py` in docker with compose `docker-compose up fasterroutes`
 - A file called `route.txt` will be created. Copy the content of this file as new optimized route back to your RDM mon instance.
 - Finished.
 
