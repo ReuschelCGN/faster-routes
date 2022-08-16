@@ -108,7 +108,7 @@ def get_spawns():
         updatetimer = time.time() - (config["lastupdated"] * 3600 * 24)
     else:
         updatetimer = time.time() - (730 * 3600 * 24)
-    query = f"select id, lat, lon from spawnpoint where ST_CONTAINS(ST_GEOMFROMTEXT('POLYGON(({area}))'), point(lat, lon)) and updated > %s AND % {updatetimer} order by lat, lon"
+    query = f"select id, lat, lon from spawnpoint where ST_CONTAINS(ST_GEOMFROMTEXT('POLYGON(({area}))'), point(lat, lon)) and updated >= {updatetimer} order by lat, lon"
     cursor.execute(query)
 
     r = cursor.fetchall()
