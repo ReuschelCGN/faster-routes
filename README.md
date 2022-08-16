@@ -20,6 +20,7 @@ If you want to create a new route, just change `faster-routes/geofence.txt`, run
 - Go through each pair of spawns that are within `max_distance_between_spawns` meters of one another, find the middle point and save it together with the spawns in its `view_distance` meter range if it covers more than `min_total_spawns_in_cluster` spawns. These will be all possible clusters we'll now check
 - Go through each spawnpoint, find all clusters containing this spawnpoint and save the one containing the most overall spawnpoints. This is how the main route will be built
 - Go through all routepoints and remove clusters that have added less than `min_added_spawns_in_cluster`. So if a cluster covers a total of 5 spawns, but those 5 spawns are already covered by other clusters, that cluster will be removed. If you raise this number, you can later manually add the missed spawns yourself.
+- `lastupdated` Only use spawnpoints that were last updated in x days. (Use 0 as defaults to 730 days.)
 - The script will then try to "group" clusters
 
 ### Possible improvements
