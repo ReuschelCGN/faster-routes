@@ -1,0 +1,14 @@
+version: '2.4'
+services:
+  fasterroutes:
+    container_name: fasterroutes
+    build:
+      context: ./faster-routes
+    command: python3 cluster.py
+    restart: "no"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./faster-routes:/usr/src/app/
+    networks:
+      - default
