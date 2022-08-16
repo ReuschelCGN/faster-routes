@@ -8,6 +8,6 @@
     "max_distance_between_spawns": 75,
     "view_distance": 67,
     "min_total_spawns_in_cluster": 1,
-
-    "min_added_spawns_in_cluster": 1
+    "min_added_spawns_in_cluster": 1,
+    "lastupdated": 365
 }
