@@ -8,13 +8,12 @@ An alternate routecalc algorithm now for RDM (made quick and dirty)
 This is a recommendation of how to use this script. It requires a bit of setup but the workflow in the end is pretty good. Note that I set up everything (except the RDM instance) on my own computer since it takes quite a bit of computing.
 
 - `git clone https://github.com/ccev/faster-routes.git && cd faster-routes && cp config-example.json config.json`, then fill in the config's db part
-- Clone `git clone https://github.com/Tabbomat/MADUtilities.git` and fill in its config
-- In the faster-routes directory, create a new file `fence.txt`. This file should contain the geofence you want your route to be calculated it in. Copy the text from MADmin - Settings - Geofences - Edit
+- In the faster-routes directory, create a new file `geofence.txt`. This file should contain the geofence you want your route to be calculated it in.
 - Run `cluster.py`
-- A file called `route.txt` will be created. Copy that to your MADUtilities directory. Then run `overwrite_route.py` there
-- Finished. For further improvement I highly recommend viewing the route in MADmin and edit it
+- A file called `route.txt` will be created. Copy the content of this file as new optimized route back to your RDM Mon instance.
+- Finished.
 
-If you want to create a new route, just change `faster-routes/fence.txt`, run `cluster.py`, copy `route.txt` to MADutilities, run `overwrite_route.py`, go to MADmin and review the results.
+If you want to create a new route, just change `faster-routes/geofence.txt`, run `cluster.py`, copy content of `route.txt` to RDM Mon instance and review the results.
 
 ### How it works and what te config does
 
