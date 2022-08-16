@@ -7,7 +7,7 @@ An alternate routecalc algorithm now for RDM (made quick and dirty)
 
 This is a recommendation of how to use this script. It requires a bit of setup but the workflow in the end is pretty good. Note that I set up everything (except the RDM instance) on my own computer since it takes quite a bit of computing.
 
-- `git clone https://github.com/ccev/faster-routes.git && cd faster-routes && cp config-example.json config.json`, then fill in the config's db part
+- `git clone -b rdm https://github.com/ccev/faster-routes.git && cd faster-routes && cp config-example.json config.json`, then fill in the config's db part
 - In the faster-routes directory, edit `geofence.txt`. This file should contain the geofence you want your route to be calculated it in.
 - Run `cluster.py`
 - A file called `route.txt` will be created. Copy the content of this file as new optimized route back to your RDM mon instance.
